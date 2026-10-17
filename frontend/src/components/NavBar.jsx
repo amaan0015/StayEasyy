@@ -128,6 +128,11 @@ function Navbar() {
 
   
 const handleNotificationClick = async (notification) => {
+  console.log("CLICKED NOTIFICATION:", {
+  type: notification.type,
+  id: notification._id,
+  enquiry: notification.enquiry,
+});
   if (!notification.isRead) {
     await handleMarkAsRead(notification._id);
   }
