@@ -387,17 +387,20 @@ const handleSubmitReview = async (event) => {
             )}
 
             
+
 {/* Message Owner */}
-{user?.role === "tenant" && (
-  <button
-    type="button"
-    onClick={handleMessageOwner}
-    disabled={chatLoading}
-    className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-teal-700 px-6 py-3 font-semibold text-white transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
-  >
-    {chatLoading ? "Opening chat..." : "Message Owner"}
-  </button>
-)}
+{/* Message Owner */}
+{user?.role === "tenant" &&
+  String(user._id) !== String(property?.owner?._id || property?.owner) && (
+    <button
+      type="button"
+      onClick={handleMessageOwner}
+      disabled={chatLoading}
+      className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-teal-700 px-6 py-3 font-semibold text-white transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+    >
+      {chatLoading ? "Opening chat..." : "Message Owner"}
+    </button>
+  )}
 
 
             {/* Success message */}
