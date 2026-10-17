@@ -1,13 +1,11 @@
-import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+import { Camera, Users, BriefcaseBusiness, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <footer className="bg-slate-950 px-6 py-14 text-slate-300">
       <div className="mx-auto max-w-7xl">
-
         <div className="grid gap-10 md:grid-cols-4">
-
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="text-2xl font-bold text-white">
@@ -26,36 +24,22 @@ function Footer() {
 
           {/* Explore */}
           <div>
-            <h3 className="font-semibold text-white">
-              Explore
-            </h3>
+            <h3 className="font-semibold text-white">Explore</h3>
 
             <div className="mt-4 flex flex-col gap-3 text-sm">
-              <Link
-                to="/properties"
-                className="hover:text-teal-400"
-              >
+              <Link to="/properties" className="hover:text-teal-400">
                 Properties
               </Link>
 
-              <Link
-                to="/how-it-works"
-                className="hover:text-teal-400"
-              >
+              <Link to="/how-it-works" className="hover:text-teal-400">
                 How it works
               </Link>
 
-              <Link
-                to="/about"
-                className="hover:text-teal-400"
-              >
+              <Link to="/about" className="hover:text-teal-400">
                 About us
               </Link>
 
-              <Link
-                to="/contact"
-                className="hover:text-teal-400"
-              >
+              <Link to="/contact" className="hover:text-teal-400">
                 Contact
               </Link>
             </div>
@@ -63,39 +47,26 @@ function Footer() {
 
           {/* For owners */}
           <div>
-            <h3 className="font-semibold text-white">
-              For owners
-            </h3>
+            <h3 className="font-semibold text-white">For owners</h3>
 
             <div className="mt-4 flex flex-col gap-3 text-sm">
-              <Link
-                to="/owner"
-                className="hover:text-teal-400"
-              >
+              <Link to="/owner" className="hover:text-teal-400">
                 List your property
               </Link>
 
-              <Link
-                to="/login"
-                className="hover:text-teal-400"
-              >
+              <Link to="/login" className="hover:text-teal-400">
                 Owner login
               </Link>
 
-              <Link
-                to="/register"
-                className="hover:text-teal-400"
-              >
+              <Link to="/register" className="hover:text-teal-400">
                 Create account
               </Link>
             </div>
           </div>
-
         </div>
 
         {/* Bottom */}
         <div className="mt-12 flex flex-col gap-5 border-t border-slate-800 pt-6 md:flex-row md:items-center md:justify-between">
-
           <p className="text-sm text-slate-500">
             © 2026 StayEasyy. All rights reserved.
           </p>
@@ -106,7 +77,7 @@ function Footer() {
               aria-label="Instagram"
               className="hover:text-teal-400"
             >
-              <Instagram size={18} />
+              <Camera size={18} />
             </a>
 
             <a
@@ -114,7 +85,7 @@ function Footer() {
               aria-label="Facebook"
               className="hover:text-teal-400"
             >
-              <Facebook size={18} />
+              <Users size={18} />
             </a>
 
             <a
@@ -122,7 +93,7 @@ function Footer() {
               aria-label="LinkedIn"
               className="hover:text-teal-400"
             >
-              <Linkedin size={18} />
+              <BriefcaseBusiness size={18} />
             </a>
 
             <a
@@ -133,9 +104,7 @@ function Footer() {
               <Mail size={18} />
             </a>
           </div>
-
         </div>
-
       </div>
     </footer>
   );
