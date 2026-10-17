@@ -126,31 +126,41 @@ function Navbar() {
     }
   };
 
-  const handleNotificationClick = async (notification) => {
-    if (!notification.isRead) {
-      await handleMarkAsRead(notification._id);
+  
+const handleNotificationClick = async (notification) => {
+  if (!notification.isRead) {
+    await handleMarkAsRead(notification._id);
+  }
+
+  setShowNotifications(false);
+
+  // Message notifications should open the chat page.
+  if (notification.type === "new_message") {
+    navigate("/chat");
+    return;
+  }
+
+  // Enquiry notifications should open the relevant property.
+  if (notification.enquiry?.property) {
+    const propertyId =
+      typeof notification.enquiry.property === "object"
+        ? notification.enquiry.property._id
+        : notification.enquiry.property;
+
+    if (propertyId) {
+      navigate(`/properties/${propertyId}`);
+      return;
     }
+  }
 
-    setShowNotifications(false);
+  // Preserve the existing fallback for other notifications.
+  if (user?.role === "owner") {
+    navigate("/owner/enquiries");
+  } else {
+    navigate(getDashboardPath());
+  }
+};
 
-    if (notification.enquiry?.property) {
-      const propertyId =
-        typeof notification.enquiry.property === "object"
-          ? notification.enquiry.property._id
-          : notification.enquiry.property;
-
-      if (propertyId) {
-        navigate(`/properties/${propertyId}`);
-        return;
-      }
-    }
-
-    if (user?.role === "owner") {
-      navigate("/owner/enquiries");
-    } else {
-      navigate(getDashboardPath());
-    }
-  };
 
   return (
     <nav className="relative z-[99999] w-full border-b border-slate-200 bg-white">
