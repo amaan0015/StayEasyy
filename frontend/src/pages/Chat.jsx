@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { io } from "socket.io-client";
 import { MessageCircle, Send, RefreshCw } from "lucide-react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavBar.jsx";
 import { useAuth } from "../context/AuthContext";
 import api from "../services/api";
 

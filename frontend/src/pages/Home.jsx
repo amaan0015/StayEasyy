@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavBar.jsx";
 import Hero from "../components/Hero";
 import FeaturedProperties from "../components/FeaturedProperties";
 import HowItWorks from "../components/HowItWorks";
