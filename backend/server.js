@@ -22,6 +22,7 @@ const io = new Server(server, {
       "http://10.127.178.137:5173",
       "https://stay-easyy-one.vercel.app",
       "https://stay-easyy-5ogtqslu0-amaan-649f.vercel.app",
+      "https://stay-easyy-f3un61bmu-amaan-649f.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
